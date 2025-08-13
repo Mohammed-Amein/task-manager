@@ -30,19 +30,16 @@ const TaskDisplayer = () => {
   const filteredTasks = getFilteredTasks();
 
   const renderButton = (label, value) => (
-    <Animated.View style={{ transform: [{ scale: filter === value ? scaleAnim : 1 }] }}>
-      <TouchableOpacity
-        onPress={() => setFilter(value)}
+    <TouchableOpacity
         style={[
-          styles.filterButton,
-          filter === value && styles.selectedButton // highlight when selected
+            styles.filterButton,
+            filter === value && styles.selectedButton,
+            { justifyContent: 'center', alignItems: 'center' } // Added alignment styles
         ]}
-      >
-        <Text style={[styles.filterText, filter === value && styles.selectedText]}>
-          {label}
-        </Text>
-      </TouchableOpacity>
-    </Animated.View>
+        onPress={() => setFilter(value)}
+    >
+        <Text style={[styles.filterText, filter === value && styles.selectedText]}>{label}</Text>
+    </TouchableOpacity>
   );
 
   return (

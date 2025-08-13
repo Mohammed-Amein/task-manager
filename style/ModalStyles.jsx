@@ -16,7 +16,7 @@ const ModalStyles = StyleSheet.create({
   },
   closeButton: {
     position: 'absolute',
-    bottom: 10,
+    bottom: 19,
     left: 10,
     width: 120,
     height: 40,

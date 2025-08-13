@@ -26,7 +26,7 @@ my-expo-app/
 │   ├── favicon.png
 │   ├── icon.png
 │   ├── splash.png
-├── components/
+├── components/        <----    all the components are here
 │   ├── AddModal.jsx
 │   ├── EditModal.jsx
 │   ├── EditTaskButton.jsx
@@ -34,9 +34,9 @@ my-expo-app/
 │   ├── ModalInputArea.jsx
 │   ├── Task.jsx
 │   ├── TaskDisplayer.jsx
-├── Context/
+├── Context/           <----    the context to share the state between components 
 │   ├── TaskContext.jsx
-├── style/
+├── style/             <----    all the styling is made here
 │   ├── AddTaskStyle.jsx
 │   ├── EditButtonStyle.jsx
 │   ├── InputAreaStyle.jsx
@@ -71,7 +71,7 @@ my-expo-app/
 
 1. Start the development server:
    ```bash
-   npm start
+   npx expo start 
    ```
 2. Follow the instructions in the terminal to run the app on an emulator or a physical device.
 
@@ -86,17 +86,7 @@ my-expo-app/
 
 Custom styles are defined in the `style/` directory. Each component has its corresponding style file for better maintainability.
 
-## Assets
 
-The `assets/` directory contains images and icons used in the app, such as the app icon and splash screen.
 
-## Configuration Files
 
-- **babel.config.js**: Babel configuration.
-- **metro.config.js**: Metro bundler configuration.
-- **tailwind.config.js**: Tailwind CSS configuration.
-- **tsconfig.json**: TypeScript configuration.
 
-## License
-
-This project is licensed under the MIT License.

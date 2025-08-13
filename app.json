@@ -1,10 +1,11 @@
 {
   "expo": {
-    "name": "my-expo-app",
+    "name": "task-manager",
     "slug": "my-expo-app",
     "version": "1.0.0",
 
     "web": {
+      "bundler": "metro",
       "favicon": "./assets/favicon.png"
     },
 

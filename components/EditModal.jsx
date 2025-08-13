@@ -1,0 +1,53 @@
+// ModalComponent.jsx
+import { View, TouchableOpacity, Text,Button,KeyboardAvoidingView } from 'react-native';
+import { useState ,useContext} from 'react';
+import { TaskContext } from 'Context/TaskContext';
+import Modal from 'react-native-modal'; 
+import {ModalStyles} from 'style/ModalStyles';
+import ModalInputArea from './ModalInputArea';
+
+const styles = ModalStyles;
+
+const EditModal = ({ isModalVisible, toggleModal, id ,name,description}) => {
+  const {editTask}= useContext(TaskContext)
+
+  const [taskName, setTaskName] = useState(name);
+  const [taskDescription, setTaskDescription] = useState(description);
+
+
+  const handleEditTask = () => {
+    console.log("Editing task with ID in modal:", id);
+    editTask(id, taskName, taskDescription);
+    
+    toggleModal();
+    setTaskName('');
+    setTaskDescription('');
+  };
+
+ 
+
+  return (
+    <Modal isVisible={isModalVisible} onBackdropPress={toggleModal} >
+      <KeyboardAvoidingView>
+      <View style={styles.modalCard}>
+        <ModalInputArea taskName={taskName} setTaskName={setTaskName} taskDescription={taskDescription} setTaskDescription={setTaskDescription} />
+        {/* Cancel button  */}
+        <TouchableOpacity   onPress={toggleModal}    style={styles.closeButton} >
+        <Text style={{ color: 'white', fontSize: 16 }}>Cancel</Text>
+        </TouchableOpacity>
+        {/* Add button  */}
+        <View style={styles.actionButton}>
+          <Button title="OK" color="green"  disabled={taskName === '' && taskDescription=== '' } onPress={handleEditTask} />
+        </View>
+        
+      </View>
+      </KeyboardAvoidingView>
+      
+      
+      
+      
+    </Modal>
+  );
+};
+
+export default EditModal;

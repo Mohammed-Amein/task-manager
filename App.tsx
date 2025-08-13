@@ -1,13 +1,29 @@
-import { ScreenContent } from 'components/ScreenContent';
-import { StatusBar } from 'expo-status-bar';
+import { Text, View, StyleSheet } from 'react-native';
+import TaskDisplayer from 'components/TaskDisplayer';
+import { TaskProvider } from 'Context/TaskContext';
+import AddModal from 'components/AddModal';
 
-import './global.css';
 
 export default function App() {
   return (
-    <>
-      <ScreenContent title="Home" path="App.tsx"></ScreenContent>
-      <StatusBar style="auto" />
-    </>
+    <TaskProvider>
+      <View style={styles.container}>
+        <TaskDisplayer />
+        
+        <AddModal/>
+      </View>
+    </TaskProvider>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    padding: 20,
+    borderWidth: 3,
+    
+    borderRadius: 10,
+  },
+});

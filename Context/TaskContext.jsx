@@ -39,7 +39,7 @@ const TaskProvider = ({ children }) => {
   };
 
   // edit function
-  // edit function
+  
   const editTask = (id, newName, newDescription) => {
     setTasks(prevTasks =>
       prevTasks.map(task => {

@@ -6,12 +6,16 @@ import { Feather } from '@expo/vector-icons';
 import EditTaskButton from './EditTaskButton';
 import { TaskCardStyle } from 'style/TaskCardStyle';
 
+// this is the task card component each card hold one task 
+// the toggle done and delete task is done from here 
+// the edit task button is also here but the modal is in the EditTaskButton component
+
 const styles = TaskCardStyle
 
 const Task = ({ task }) => {
   const { deleteTask, toggleDone } = useContext(TaskContext);
   const [isDone, setIsDone] = useState(task.done);
-
+ // toggle done is made by this function 
   const onToggle = () => {
     toggleDone(task.id);
     setIsDone(!isDone);
@@ -30,7 +34,7 @@ const Task = ({ task }) => {
           {task.done ? 'Done' : 'Not Done'}
         </Text>
       </View>
-
+      {/* Delete task function is done here */}
       <TouchableOpacity
         onPress={() => deleteTask(task.id)}
         style={styles.deleteButton}
@@ -39,6 +43,7 @@ const Task = ({ task }) => {
         <Feather name="trash-2" size={24} color="#ff4444" />
       </TouchableOpacity>
       <View style={styles.editButton}>
+        {/* Edit task button is here */}
       <EditTaskButton  id={task.id} name={task.name} description={task.description} />
       </View>
       

@@ -16,7 +16,7 @@ const EditModal = ({ isModalVisible, toggleModal, id ,name,description}) => {
 
 
   const handleEditTask = () => {
-    console.log("Editing task with ID in modal:", id);
+    
     editTask(id, taskName, taskDescription);
     
     toggleModal();

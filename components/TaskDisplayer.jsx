@@ -7,7 +7,7 @@ import { TaskDisplayStyle } from 'style/TaskDisplayStyle';
 const styles = TaskDisplayStyle;
 
 const TaskDisplayer = () => {
-  const { Tasks } = useContext(TaskContext);
+  const { Tasks } = useContext(TaskContext); // Accessing the tasks from the TaskContext
 
   const [filter, setFilter] = useState('all'); // 'all', 'done', 'undone'
   const scaleAnim = useRef(new Animated.Value(1)).current; // animation value
@@ -19,7 +19,8 @@ const TaskDisplayer = () => {
       Animated.spring(scaleAnim, { toValue: 1, useNativeDriver: true })
     ]).start();
   }, [filter]);
-
+  // Function to filter tasks based on the selected filter
+  // 'done' for completed tasks, 'undone' for pending tasks, 'all' for all tasks
   const getFilteredTasks = () => {
     if (filter === 'done') return Tasks.filter(task => task.done);
     if (filter === 'undone') return Tasks.filter(task => !task.done);
@@ -53,7 +54,7 @@ const TaskDisplayer = () => {
         {renderButton('Undone', 'undone')}
       </View>
 
-      {/* Task List */}
+      {/* Task List renders the tasks in the task state from the last to begin*/}
       {filteredTasks.length === 0 ? (
         <Text>No tasks yet!</Text>
       ) : (

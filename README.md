@@ -1,3 +1,9 @@
+## Demo
+
+![Demo](video/demoGIF.gif)
+
+
+
 this readme contains:
 
  1. project structure
@@ -205,7 +211,7 @@ note : the `<Addmodal>` and `<EditModal>` is similar but i made `<Addmodal>` in 
 
 
 
-![Demo](video/demoGIF.gif)
+
 
 
 

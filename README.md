@@ -200,13 +200,18 @@ close the modal
 
 - everything is wrapped up in `<KeyboardAvoidingView>` this help to avoid colliding with the keyboard
 
-- the modal component is used from https://github.com/react-native-modal/react-native-modal
+
 
 
 6. **Addmodal** 
 work the same way as `<EditModal>` but uses `addTask`  from `TaskContext` to perform the add task functionality 
 
 note : the `<Addmodal>` and `<EditModal>` is similar but i made `<Addmodal>` in one full component while i broke `<EditModal>` to smaller components 
+
+
+## third party libraries
+
+- the modal component is used from https://github.com/react-native-modal/react-native-modal it provide a better model component
 
 
 

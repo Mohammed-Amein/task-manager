@@ -205,7 +205,8 @@ note : the `<Addmodal>` and `<EditModal>` is similar but i made `<Addmodal>` in 
 
 
 
-[![Demo](video/preview.png)](https://github.com/Mohammed-Amein/task-manager/raw/main/video/demoGIF.gif)
+![Demo](video/demoGIF.gif)
+
 
 
 

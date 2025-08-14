@@ -75,7 +75,7 @@ make sure you use expo
 
 1. Start the development server:
    ```bash
-   npx expo start 
+   npx expo start --no-dev --minify 
    ```
 
 

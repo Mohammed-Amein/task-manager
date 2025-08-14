@@ -13,6 +13,7 @@ this readme contains:
  5. context and state management 
  6. App functionalities
  7. detailed explanation for how each component work
+ 8. third party libraries
 
 ## Project Structure
 

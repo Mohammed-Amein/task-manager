@@ -40,14 +40,10 @@ function AddModal() {
                         <TextInput placeholder="Enter task description" style={styles.textInput} onChangeText={text => setTaskDescription(text)} value={taskDescription} />
                     </View>
                     <View style={styles.cancelButton}>
-                        <TouchableOpacity onPress={toggleModal} style={styles.buttonStyle}>
-                            <Text style={styles.buttonText}>Cancel</Text>
-                        </TouchableOpacity>
+                        <Button title="cancel" color="red" onPress={toggleModal} />
                     </View>
                     <View style={styles.addButton}>
-                        <TouchableOpacity onPress={handleAddTask} style={styles.buttonStyle} disabled={taskName === ''}>
-                            <Text style={[styles.buttonText, taskName === '' && styles.disabledText]}>Add</Text>
-                        </TouchableOpacity>
+                        <Button title="Add" color="green" disabled={taskName === ''} onPress={handleAddTask} />
                     </View>
                 </View>
             </KeyboardAvoidingView>
